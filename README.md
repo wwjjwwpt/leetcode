@@ -123,3 +123,23 @@ class Solution:
         return res[::-1]
 ```
 ## 二叉树的重建
+
+## 剑指 Offer 15. 二进制中1的个数
+```
+class Solution:
+    def hammingWeight(self, n: int) -> int:
+        b = []  # 存储余数
+        while True:  # 一直循环，商为0时利用break退出循环
+            s = n // 2  # 商
+            y = n % 2  # 余数
+            b = b + [y]  # 每一个余数存储到b中
+            if s == 0:
+                break  # 商为0时结束循环
+            n = s
+        #这里不需要倒序
+        count = 0
+        for i in b:
+            if i ==1:
+                count+=1
+        return count
+```
